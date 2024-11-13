@@ -1,0 +1,23 @@
+
+roop unleashead
+#@title 1-Install Requirnements - التثبيت
+!apt-get update
+!apt-get install cuda-toolkit-11-8
+import os
+os.environ["LD_LIBRARY_PATH"] += ":" + "/usr/local/cuda-11/lib64"
+os.environ["LD_LIBRARY_PATH"] += ":" + "/usr/local/cuda-11.8/lib64"
+
+
+
+#@title 2-Installing & preparing requirements - الخطوة الثانية
+import codecs
+
+giturl = codecs.decode('uggcf://tvguho.pbz/onfvgnghor/OnfrgnGhor_EHI.tvg','rot_13')
+gitdir = codecs.decode('OnfrgnGhor_EHI','rot_13')
+
+!git clone {giturl}
+%cd /content/{gitdir}
+!mv config_colab.yaml config.yaml
+!pip install -r requirements.txt
+#@title 3-Run GUI - التشغيل
+!python run.py
